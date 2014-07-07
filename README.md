@@ -36,3 +36,22 @@ Run Jersey REST service:
 	http://localhost:8080/notifications/rest/sample/save
 
 
+OK (WebAppConfig -> @ComponentScan(basePackages = { "org.daniels.examples.notification.controller" }) )
+Spring REST
+org.springframework.web.context.WebApplicationContext:/notifications/SpringServlet
+Parent: org.springframework.web.context.WebApplicationContext:/notifications
+
+Jersey REST
+Root Context: org.springframework.web.context.WebApplicationContext:/notifications
+Parent: null
+
+
+NOK (WebAppConfig -> @ComponentScan(basePackages = { "org.daniels.examples.notification" }) )
+
+Spring REST
+org.springframework.web.context.WebApplicationContext:/notifications/SpringServlet
+Parent: org.springframework.web.context.WebApplicationContext:/notifications
+
+Jersey REST
+Root Context: org.springframework.web.context.WebApplicationContext:/notifications
+Parent: null
