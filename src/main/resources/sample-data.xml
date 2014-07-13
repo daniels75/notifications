@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <table name="notificationsource">
+        <column>id</column>
+        <column>name</column>
+        <row>
+            <value description="id">1</value>
+            <value description="name">sourceA</value>
+        </row>      
+    </table>
+    <table name="notificationtype">
+        <column>id</column>
+        <column>name</column>
+        <column>source_id</column>
+        <row>
+            <value description="id">1</value>
+            <value description="name">typeA</value>
+			<value description="source_id">1</value>
+        </row>
+    </table>
+</dataset>

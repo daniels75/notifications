@@ -1,5 +1,8 @@
 WebSocket + Rest + Spring Example
 
+First time run with:
+mvn clean install -Pinit
+
 	How to run it:
 	Create eclipse project: mvn eclipse:eclipse -Dwtpversion=2.0 -DdownloadSources=true
 	Import project in eclipse
@@ -55,3 +58,26 @@ Parent: org.springframework.web.context.WebApplicationContext:/notifications
 Jersey REST
 Root Context: org.springframework.web.context.WebApplicationContext:/notifications
 Parent: null
+
+
+
+Notifications
+
+How to use Notifications
+Use any REST client (Advance Rest Client) and run it with: http://<host>:8080/notifications/notify
+For example you can use a zone address: http://localhost:8080/notifications/notify
+
+Method: POST
+
+Headers:
+Accept: application/json
+
+
+Payload:
+{
+"content":"testme","url":"your.url.com"
+}
+
+
+Set "Content-Type" to:
+application/json

@@ -4,24 +4,27 @@
 	version="3.0">
 
 	<display-name>Notification Service</display-name>
-	<context-param>
-		<param-name>contextClass</param-name>
-		<param-value>
-              org.springframework.web.context.support.AnnotationConfigWebApplicationContext
-          </param-value>
-	</context-param>
+<!-- 	<context-param> -->
+<!-- 		<param-name>contextClass</param-name> -->
+<!-- 		<param-value> -->
+<!--               org.springframework.web.context.support.AnnotationConfigWebApplicationContext -->
+<!--           </param-value> -->
+<!-- 	</context-param> -->
 
+<!-- 	<context-param> -->
+<!-- 		<param-name>contextConfigLocation</param-name> -->
+<!-- 		<param-value> -->
+<!--           	org.daniels.examples.notification.config.AppConfig, -->
+<!--             org.daniels.examples.notification.config.WebSocketAppConfig, -->
+<!--              org.daniels.examples.notification.config.PersistencyConfig          	 -->
+<!--           </param-value> -->
+<!-- 	</context-param> -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
-          	org.daniels.examples.notification.config.AppConfig,
-            org.daniels.examples.notification.config.WebSocketAppConfig          	
-          </param-value>
+            classpath*:/applicationContext.xml
+        </param-value>
 	</context-param>
-
-	<listener>
-		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener>
 
 	<servlet>
 		<servlet-name>SpringServlet</servlet-name>
@@ -33,7 +36,10 @@
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
 			<param-value>
-                        org.daniels.examples.notification.config.WebAppConfig
+                        org.daniels.examples.notification.config.WebAppConfig,
+          	org.daniels.examples.notification.config.AppConfig,
+            org.daniels.examples.notification.config.WebSocketAppConfig,
+             org.daniels.examples.notification.config.PersistencyConfig                          
                 </param-value>
 		</init-param>
 
@@ -66,7 +72,7 @@
 
 	<filter>
 		<filter-name>CorsFilter</filter-name>
-		<filter-class>org.daniels.examples.notification.filter.SimpleCORSFilter</filter-class>
+		<filter-class>org.daniels.examples.notification.filter.CrossOriginFilter</filter-class>
 		<async-supported>true</async-supported>
 	</filter>
 	<filter-mapping>
@@ -80,7 +86,9 @@
 	</welcome-file-list>
 
 
-
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
 
 
 </web-app>
