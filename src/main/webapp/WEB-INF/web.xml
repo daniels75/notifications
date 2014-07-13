@@ -4,28 +4,22 @@
 	version="3.0">
 
 	<display-name>Notification Service</display-name>
-<!-- 	<context-param> -->
-<!-- 		<param-name>contextClass</param-name> -->
-<!-- 		<param-value> -->
-<!--               org.springframework.web.context.support.AnnotationConfigWebApplicationContext -->
-<!--           </param-value> -->
-<!-- 	</context-param> -->
+	<context-param>
+		<param-name>contextClass</param-name>
+		<param-value>
+              org.springframework.web.context.support.AnnotationConfigWebApplicationContext
+          </param-value>
+	</context-param>
 
-<!-- 	<context-param> -->
-<!-- 		<param-name>contextConfigLocation</param-name> -->
-<!-- 		<param-value> -->
-<!--           	org.daniels.examples.notification.config.AppConfig, -->
-<!--             org.daniels.examples.notification.config.WebSocketAppConfig, -->
-<!--              org.daniels.examples.notification.config.PersistencyConfig          	 -->
-<!--           </param-value> -->
-<!-- 	</context-param> -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
-            classpath*:/applicationContext.xml
-        </param-value>
+          	org.daniels.examples.notification.config.AppConfig,
+            org.daniels.examples.notification.config.WebSocketAppConfig,
+             org.daniels.examples.notification.config.PersistencyConfig          	
+          </param-value>
 	</context-param>
-
+	
 	<servlet>
 		<servlet-name>SpringServlet</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -36,10 +30,7 @@
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
 			<param-value>
-                        org.daniels.examples.notification.config.WebAppConfig,
-          	org.daniels.examples.notification.config.AppConfig,
-            org.daniels.examples.notification.config.WebSocketAppConfig,
-             org.daniels.examples.notification.config.PersistencyConfig                          
+                        org.daniels.examples.notification.config.WebAppConfig                       
                 </param-value>
 		</init-param>
 
@@ -50,11 +41,6 @@
 		<servlet-name>SpringServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-
-
-
-	<!-- <context-param> <param-name>contextConfigLocation</param-name> <param-value> 
-		classpath:applicationContext1.xml </param-value> </context-param> -->
 
 	<servlet>
 		<servlet-name>jersey-serlvet</servlet-name>
